@@ -2,15 +2,15 @@
   "type": "workflow_collections",
   "data": [
     {
-      "@context": "/api/3/contexts/WorkflowCollection",
       "@type": "WorkflowCollection",
-      "name": "Sample - AWS Access Analyzer - 1.0.0",
+      "name": "Sample - AWS Access Analyzer - 1.1.0",
       "description": "Sample playbooks for \"AWS Access Analyzer\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
       "image": "/api/3/images/855702c5-dedd-457a-8675-8be5f281fefa",
-      "id": 1407,
-      "createDate": 1650286359,
-      "modifyDate": 1650286359,
+      "uuid": "6e953341-a09a-4f80-a9da-7a946d4905a3",
+      "id": 273,
+      "deletedAt": null,
+      "importedBy": [],
       "recordTags": [],
       "workflows": [
         {
@@ -21,21 +21,22 @@
           "tag": "#AWS Access Analyzer",
           "description": "Retrieves information about the specified analyzer.",
           "isActive": false,
+          "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1650286902,
-          "collection": "/api/3/workflow_collections/8903b8b2-dfcf-45a4-a9c9-0f123762b623",
+          "lastModifyDate": 1662467734,
+          "collection": "/api/3/workflow_collections/6e953341-a09a-4f80-a9da-7a946d4905a3",
           "versions": [],
-          "triggerStep": "/api/3/workflow_steps/f50ef48a-2464-409d-9848-89ac4b4b8e06",
+          "triggerStep": "/api/3/workflow_steps/338edb63-1053-4aa2-9882-6badfc441e71",
           "steps": [
             {
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "arguments": {
-                "route": "e876a4a5-137d-4ad4-ad1b-c4f34a0bbdd0",
+                "route": "c90d8138-0906-454d-bf17-beb502904df9",
                 "title": "AWS Access Analyzer: Get analyzer details",
                 "resources": [
                   "alerts"
@@ -52,8 +53,8 @@
               "top": "20",
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "f50ef48a-2464-409d-9848-89ac4b4b8e06",
-              "id": 36186
+              "group": null,
+              "uuid": "338edb63-1053-4aa2-9882-6badfc441e71"
             },
             {
               "@type": "WorkflowStep",
@@ -65,7 +66,7 @@
                 "params": {
                   "assume_role": false
                 },
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "connector": "aws-access-analyzer",
                 "operation": "get_analyzers",
                 "operationTitle": "Get analyzer details",
@@ -77,413 +78,33 @@
               "top": "120",
               "left": "188",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "dd019de1-5221-4720-8525-c1a0ad18a7d7",
-              "id": 36187
+              "group": null,
+              "uuid": "a9792498-b23d-49b8-87d1-9ae480fd999c"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
               "name": "Start -> Get analyzer details",
-              "targetStep": "/api/3/workflow_steps/dd019de1-5221-4720-8525-c1a0ad18a7d7",
-              "sourceStep": "/api/3/workflow_steps/f50ef48a-2464-409d-9848-89ac4b4b8e06",
+              "targetStep": "/api/3/workflow_steps/a9792498-b23d-49b8-87d1-9ae480fd999c",
+              "sourceStep": "/api/3/workflow_steps/338edb63-1053-4aa2-9882-6badfc441e71",
               "label": null,
               "isExecuted": false,
-              "uuid": "b04cf50f-221d-4a79-bfbb-eb1d5e47b968"
+              "uuid": "095e117d-39dd-417d-85f9-7be3c1d638ff"
             }
           ],
+          "groups": [],
           "priority": null,
-          "uuid": "0cccd88a-be12-40d1-9140-ce4a52e14ff2",
+          "uuid": "05039fb5-9d6b-41d9-b7b2-56303f058a49",
+          "id": 3903,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "aws",
             "aws-access-analyzer"
-          ],
-          "id": 13232,
-          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1650286359,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1650286902,
-          "owners": [],
-          "isPrivate": false
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Update Findings Status",
-          "aliasName": null,
-          "tag": "#AWS Access Analyzer",
-          "description": "Updates the status for the specified findings.",
-          "isActive": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": 1650287070,
-          "collection": "/api/3/workflow_collections/8903b8b2-dfcf-45a4-a9c9-0f123762b623",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/d8e01c13-4e8f-49b7-8981-7d5838f7d234",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "368cef08-1708-4769-827a-324fe2f6af19",
-                "title": "AWS Access Analyzer: Update Findings Status",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "d8e01c13-4e8f-49b7-8981-7d5838f7d234",
-              "id": 36198
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Update Findings Status",
-              "description": null,
-              "arguments": {
-                "name": "AWS Access Analyzer",
-                "config": "''",
-                "params": {
-                  "ids": [],
-                  "status": "ACTIVE",
-                  "assume_role": false,
-                  "client_token": ""
-                },
-                "version": "1.0.0",
-                "connector": "aws-access-analyzer",
-                "operation": "update_findings",
-                "operationTitle": "Update Findings Status",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "status": null,
-              "top": "120",
-              "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "941818a2-4c60-4a52-b7ec-28f1a49bec8d",
-              "id": 36199
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start -> Update Findings Status",
-              "targetStep": "/api/3/workflow_steps/941818a2-4c60-4a52-b7ec-28f1a49bec8d",
-              "sourceStep": "/api/3/workflow_steps/d8e01c13-4e8f-49b7-8981-7d5838f7d234",
-              "label": null,
-              "isExecuted": false,
-              "uuid": "5d91ceb6-8797-48e8-9998-9e45c643cecd"
-            }
-          ],
-          "priority": null,
-          "uuid": "343a1879-b94e-4411-b6d6-77fab4a1c8b4",
-          "recordTags": [
-            "aws",
-            "aws-access-analyzer"
-          ],
-          "id": 13238,
-          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1650286359,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1650287070,
-          "owners": [],
-          "isPrivate": false
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "List of Findings",
-          "aliasName": null,
-          "tag": "#AWS Access Analyzer",
-          "description": "Retrieves a list of findings generated by the specified analyzer.",
-          "isActive": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": 1650287042,
-          "collection": "/api/3/workflow_collections/8903b8b2-dfcf-45a4-a9c9-0f123762b623",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/21ba54a0-242b-41a8-ae84-dd6bdb08f41d",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "532e46aa-c427-4363-9742-c779a157b48d",
-                "title": "AWS Access Analyzer: List of Findings",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "21ba54a0-242b-41a8-ae84-dd6bdb08f41d",
-              "id": 36192
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "List of Findings",
-              "description": null,
-              "arguments": {
-                "name": "AWS Access Analyzer",
-                "config": "''",
-                "params": {
-                  "size": 10,
-                  "sort": null,
-                  "filter": null,
-                  "next_token": "",
-                  "assume_role": false
-                },
-                "version": "1.0.0",
-                "connector": "aws-access-analyzer",
-                "operation": "list_findings",
-                "operationTitle": "List of Findings",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "status": null,
-              "top": "120",
-              "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "265d6390-23c1-420c-9aaa-90d993182a1d",
-              "id": 36193
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start -> List of Findings",
-              "targetStep": "/api/3/workflow_steps/265d6390-23c1-420c-9aaa-90d993182a1d",
-              "sourceStep": "/api/3/workflow_steps/21ba54a0-242b-41a8-ae84-dd6bdb08f41d",
-              "label": null,
-              "isExecuted": false,
-              "uuid": "30337835-35f7-4f15-971a-fd572c141835"
-            }
-          ],
-          "priority": null,
-          "uuid": "35d959e3-9592-42b2-8bac-3779f6b07bbc",
-          "recordTags": [
-            "aws",
-            "aws-access-analyzer"
-          ],
-          "id": 13235,
-          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1650286359,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1650287042,
-          "owners": [],
-          "isPrivate": false
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Details of an Analyzed Resources",
-          "aliasName": null,
-          "tag": "#AWS Access Analyzer",
-          "description": "Retrieves information about a resource that was analyzed.",
-          "isActive": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": 1650286889,
-          "collection": "/api/3/workflow_collections/8903b8b2-dfcf-45a4-a9c9-0f123762b623",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/6517332c-3aba-4fdf-a4c1-0412e10e3ac9",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "976ddf32-7658-4c5d-8158-de8189e42a33",
-                "title": "AWS Access Analyzer: Details of an Analyzed Resources",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "6517332c-3aba-4fdf-a4c1-0412e10e3ac9",
-              "id": 36190
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Details of an Analyzed Resources",
-              "description": null,
-              "arguments": {
-                "name": "AWS Access Analyzer",
-                "config": "''",
-                "params": {
-                  "assume_role": false
-                },
-                "version": "1.0.0",
-                "connector": "aws-access-analyzer",
-                "operation": "get_analyzed_resources",
-                "operationTitle": "Details of an Analyzed Resources",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "status": null,
-              "top": "120",
-              "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "87c410f6-116d-4484-91f2-2a72c5430027",
-              "id": 36191
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start -> Details of an Analyzed Resources",
-              "targetStep": "/api/3/workflow_steps/87c410f6-116d-4484-91f2-2a72c5430027",
-              "sourceStep": "/api/3/workflow_steps/6517332c-3aba-4fdf-a4c1-0412e10e3ac9",
-              "label": null,
-              "isExecuted": false,
-              "uuid": "7d9ffb24-96ce-4b5c-9121-1aa82b0bb308"
-            }
-          ],
-          "priority": null,
-          "uuid": "4e1c3e50-b249-45d8-bb1e-49cfecc760dd",
-          "recordTags": [
-            "aws",
-            "aws-access-analyzer"
-          ],
-          "id": 13234,
-          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1650286359,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1650286889,
-          "owners": [],
-          "isPrivate": false
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Start Resource Scan",
-          "aliasName": null,
-          "tag": "#AWS Access Analyzer",
-          "description": "Immediately starts a scan of the policies applied to the specified resource.",
-          "isActive": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": 1650287057,
-          "collection": "/api/3/workflow_collections/8903b8b2-dfcf-45a4-a9c9-0f123762b623",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/86527b40-268f-4819-b28b-e6c281ba3090",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "3c3f4aa6-1db2-490d-8138-74116d223c1d",
-                "title": "AWS Access Analyzer: Start Resource Scan",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "86527b40-268f-4819-b28b-e6c281ba3090",
-              "id": 36196
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Start Resource Scan",
-              "description": null,
-              "arguments": {
-                "name": "AWS Access Analyzer",
-                "config": "''",
-                "params": {
-                  "assume_role": false
-                },
-                "version": "1.0.0",
-                "connector": "aws-access-analyzer",
-                "operation": "start_resource_scan",
-                "operationTitle": "Start Resource Scan",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "status": null,
-              "top": "120",
-              "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "0bdd1684-fda9-4b17-9a1e-74a7a254d766",
-              "id": 36197
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start -> Start Resource Scan",
-              "targetStep": "/api/3/workflow_steps/0bdd1684-fda9-4b17-9a1e-74a7a254d766",
-              "sourceStep": "/api/3/workflow_steps/86527b40-268f-4819-b28b-e6c281ba3090",
-              "label": null,
-              "isExecuted": false,
-              "uuid": "0482cdaf-8071-47b3-82ce-c123b8219a44"
-            }
-          ],
-          "priority": null,
-          "uuid": "9cd0092a-1964-4927-bd89-52437c553910",
-          "recordTags": [
-            "aws",
-            "aws-access-analyzer"
-          ],
-          "id": 13237,
-          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1650286359,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1650287057,
-          "owners": [],
-          "isPrivate": false
+          ]
         },
         {
           "@type": "Workflow",
@@ -493,21 +114,50 @@
           "tag": "#AWS Access Analyzer",
           "description": "Retrieves a list of analyzers.",
           "isActive": false,
+          "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1650286863,
-          "collection": "/api/3/workflow_collections/8903b8b2-dfcf-45a4-a9c9-0f123762b623",
+          "lastModifyDate": 1662467734,
+          "collection": "/api/3/workflow_collections/6e953341-a09a-4f80-a9da-7a946d4905a3",
           "versions": [],
-          "triggerStep": "/api/3/workflow_steps/febfcf7a-5224-4997-a501-2dc69cac89ba",
+          "triggerStep": "/api/3/workflow_steps/2b6b2a59-dd9f-49a8-b636-488acfb755c5",
           "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "List Analyzers",
+              "description": null,
+              "arguments": {
+                "name": "AWS Access Analyzer",
+                "config": "2f538afc-1e32-4eac-b2bf-6838237d39f5",
+                "params": {
+                  "size": 10,
+                  "type": "ACCOUNT",
+                  "next_token": "",
+                  "assume_role": false
+                },
+                "version": "1.1.0",
+                "connector": "aws-access-analyzer",
+                "operation": "list_analyzers",
+                "operationTitle": "List Analyzers",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "04324075-7d7d-4f1b-8a7c-574b1a8991dd"
+            },
             {
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "arguments": {
-                "route": "11dd04c0-5b6e-45a4-bf1f-5f9649c47063",
+                "route": "fd048331-5091-415c-9321-04a7561ccbd0",
                 "title": "AWS Access Analyzer: List Analyzers",
                 "resources": [
                   "alerts"
@@ -535,62 +185,33 @@
               "top": "20",
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "febfcf7a-5224-4997-a501-2dc69cac89ba",
-              "id": 36184
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "List Analyzers",
-              "description": null,
-              "arguments": {
-                "name": "AWS Access Analyzer",
-                "config": "2f538afc-1e32-4eac-b2bf-6838237d39f5",
-                "params": {
-                  "size": 10,
-                  "type": "ACCOUNT",
-                  "next_token": "",
-                  "assume_role": false
-                },
-                "version": "1.0.0",
-                "connector": "aws-access-analyzer",
-                "operation": "list_analyzers",
-                "operationTitle": "List Analyzers",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "status": null,
-              "top": "120",
-              "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "c35589f6-e263-4074-b2e1-0bda68dfc654",
-              "id": 36185
+              "group": null,
+              "uuid": "2b6b2a59-dd9f-49a8-b636-488acfb755c5"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
               "name": "Start -> List Analyzers",
-              "targetStep": "/api/3/workflow_steps/c35589f6-e263-4074-b2e1-0bda68dfc654",
-              "sourceStep": "/api/3/workflow_steps/febfcf7a-5224-4997-a501-2dc69cac89ba",
+              "targetStep": "/api/3/workflow_steps/04324075-7d7d-4f1b-8a7c-574b1a8991dd",
+              "sourceStep": "/api/3/workflow_steps/2b6b2a59-dd9f-49a8-b636-488acfb755c5",
               "label": null,
               "isExecuted": false,
-              "uuid": "1e7cf50a-3db9-4d9f-9abc-8485c9b8a944"
+              "uuid": "406a6fb6-99ed-4da6-b039-a7c8578ed545"
             }
           ],
+          "groups": [],
           "priority": null,
-          "uuid": "a5b4b550-8603-4e3a-8aab-99b27b9b411b",
+          "uuid": "0b46344e-68da-47ed-a25c-20d24272d31e",
+          "id": 3908,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "aws",
             "aws-access-analyzer"
-          ],
-          "id": 13231,
-          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1650286359,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1650286863,
-          "owners": [],
-          "isPrivate": false
+          ]
         },
         {
           "@type": "Workflow",
@@ -600,21 +221,22 @@
           "tag": "#AWS Access Analyzer",
           "description": "Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer.",
           "isActive": false,
+          "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1650286931,
-          "collection": "/api/3/workflow_collections/8903b8b2-dfcf-45a4-a9c9-0f123762b623",
+          "lastModifyDate": 1662467734,
+          "collection": "/api/3/workflow_collections/6e953341-a09a-4f80-a9da-7a946d4905a3",
           "versions": [],
-          "triggerStep": "/api/3/workflow_steps/ea082bef-8154-41ba-99e2-f12328a0b7f7",
+          "triggerStep": "/api/3/workflow_steps/05d73c7e-7ad3-4da8-8ebb-4511b38d8060",
           "steps": [
             {
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "arguments": {
-                "route": "2a0b800e-16f3-41de-beb7-8caedecb0b87",
+                "route": "a203b2a0-df92-4daf-a1af-4fbe0d91af96",
                 "title": "AWS Access Analyzer: List of Analyzed Resources",
                 "resources": [
                   "alerts"
@@ -631,8 +253,8 @@
               "top": "20",
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "ea082bef-8154-41ba-99e2-f12328a0b7f7",
-              "id": 36188
+              "group": null,
+              "uuid": "05d73c7e-7ad3-4da8-8ebb-4511b38d8060"
             },
             {
               "@type": "WorkflowStep",
@@ -646,7 +268,7 @@
                   "next_token": "",
                   "assume_role": false
                 },
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "connector": "aws-access-analyzer",
                 "operation": "list_analyzed_resources",
                 "operationTitle": "List of Analyzed Resources",
@@ -658,34 +280,126 @@
               "top": "120",
               "left": "188",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "b1a4579e-760e-4a45-bdf9-cf73667628de",
-              "id": 36189
+              "group": null,
+              "uuid": "ae0b7dff-3257-42f0-a5ce-707c6056e7bc"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
               "name": "Start -> List of Analyzed Resources",
-              "targetStep": "/api/3/workflow_steps/b1a4579e-760e-4a45-bdf9-cf73667628de",
-              "sourceStep": "/api/3/workflow_steps/ea082bef-8154-41ba-99e2-f12328a0b7f7",
+              "targetStep": "/api/3/workflow_steps/ae0b7dff-3257-42f0-a5ce-707c6056e7bc",
+              "sourceStep": "/api/3/workflow_steps/05d73c7e-7ad3-4da8-8ebb-4511b38d8060",
               "label": null,
               "isExecuted": false,
-              "uuid": "ee73f9c7-d34b-4761-b89c-f32351d790ac"
+              "uuid": "b7f6a99c-8dff-4de7-abf5-facd52ad0b83"
             }
           ],
+          "groups": [],
           "priority": null,
-          "uuid": "a9df9e48-7115-4a77-b5f6-02284faa44f8",
+          "uuid": "32881794-c163-4231-a49c-85979bc76c6b",
+          "id": 3909,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "aws",
             "aws-access-analyzer"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Details of an Analyzed Resources",
+          "aliasName": null,
+          "tag": "#AWS Access Analyzer",
+          "description": "Retrieves information about a resource that was analyzed.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1662467734,
+          "collection": "/api/3/workflow_collections/6e953341-a09a-4f80-a9da-7a946d4905a3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/00be5467-5aa3-496a-ada5-5d9a8078beb0",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "5c038b84-7e35-448b-ab49-1fd905ba2a50",
+                "title": "AWS Access Analyzer: Details of an Analyzed Resources",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "00be5467-5aa3-496a-ada5-5d9a8078beb0"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Details of an Analyzed Resources",
+              "description": null,
+              "arguments": {
+                "name": "AWS Access Analyzer",
+                "config": "''",
+                "params": {
+                  "assume_role": false
+                },
+                "version": "1.1.0",
+                "connector": "aws-access-analyzer",
+                "operation": "get_analyzed_resources",
+                "operationTitle": "Details of an Analyzed Resources",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "04be7b8b-1fda-4fcb-900e-1e2850c1454b"
+            }
           ],
-          "id": 13233,
-          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1650286359,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1650286931,
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Details of an Analyzed Resources",
+              "targetStep": "/api/3/workflow_steps/04be7b8b-1fda-4fcb-900e-1e2850c1454b",
+              "sourceStep": "/api/3/workflow_steps/00be5467-5aa3-496a-ada5-5d9a8078beb0",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "1e27beec-0c2e-4ca1-9d58-e962d0f66dab"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "45c240ac-d834-425f-a88a-43c771e446a0",
+          "id": 3906,
           "owners": [],
-          "isPrivate": false
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "aws",
+            "aws-access-analyzer"
+          ]
         },
         {
           "@type": "Workflow",
@@ -695,21 +409,48 @@
           "tag": "#AWS Access Analyzer",
           "description": "Retrieves information about the specified finding.",
           "isActive": false,
+          "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1650286916,
-          "collection": "/api/3/workflow_collections/8903b8b2-dfcf-45a4-a9c9-0f123762b623",
+          "lastModifyDate": 1662467734,
+          "collection": "/api/3/workflow_collections/6e953341-a09a-4f80-a9da-7a946d4905a3",
           "versions": [],
-          "triggerStep": "/api/3/workflow_steps/d4d22c02-7f77-4fdf-bf1a-93dd9fe11e91",
+          "triggerStep": "/api/3/workflow_steps/d3d35b80-04ff-4b0f-9228-0da6c9eaf0cc",
           "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Finding Details",
+              "description": null,
+              "arguments": {
+                "name": "AWS Access Analyzer",
+                "config": "''",
+                "params": {
+                  "id": "",
+                  "assume_role": false
+                },
+                "version": "1.1.0",
+                "connector": "aws-access-analyzer",
+                "operation": "get_findings",
+                "operationTitle": "Get Finding Details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "d2db6e34-7710-4901-8ce3-1ad3f6ac89a9"
+            },
             {
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "arguments": {
-                "route": "03023445-9d48-4b06-b788-df86e933b33d",
+                "route": "b0b565b2-c47a-491c-bbea-36d38373670e",
                 "title": "AWS Access Analyzer: Get Finding Details",
                 "resources": [
                   "alerts"
@@ -726,24 +467,95 @@
               "top": "20",
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "d4d22c02-7f77-4fdf-bf1a-93dd9fe11e91",
-              "id": 36194
+              "group": null,
+              "uuid": "d3d35b80-04ff-4b0f-9228-0da6c9eaf0cc"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Finding Details",
+              "targetStep": "/api/3/workflow_steps/d2db6e34-7710-4901-8ce3-1ad3f6ac89a9",
+              "sourceStep": "/api/3/workflow_steps/d3d35b80-04ff-4b0f-9228-0da6c9eaf0cc",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "68d556ce-0c91-4be1-9a2b-b1a2c2ef29a2"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "4a60736b-7cb7-4256-b232-30647e86b90d",
+          "id": 3910,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "aws",
+            "aws-access-analyzer"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "List of Findings",
+          "aliasName": null,
+          "tag": "#AWS Access Analyzer",
+          "description": "Retrieves a list of findings generated by the specified analyzer.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1662467734,
+          "collection": "/api/3/workflow_collections/6e953341-a09a-4f80-a9da-7a946d4905a3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/52e9c2a5-bdd9-4402-993d-d22bfc41c6d7",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "b6d30127-8c38-46b6-be8a-fe8ec97796dd",
+                "title": "AWS Access Analyzer: List of Findings",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "52e9c2a5-bdd9-4402-993d-d22bfc41c6d7"
             },
             {
               "@type": "WorkflowStep",
-              "name": "Get Finding Details",
+              "name": "List of Findings",
               "description": null,
               "arguments": {
                 "name": "AWS Access Analyzer",
                 "config": "''",
                 "params": {
-                  "id": "",
+                  "size": 10,
+                  "sort": null,
+                  "filter": null,
+                  "next_token": "",
                   "assume_role": false
                 },
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "connector": "aws-access-analyzer",
-                "operation": "get_findings",
-                "operationTitle": "Get Finding Details",
+                "operation": "list_findings",
+                "operationTitle": "List of Findings",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -752,34 +564,222 @@
               "top": "120",
               "left": "188",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "380b26ae-349c-4730-84bd-f1caf5609a4f",
-              "id": 36195
+              "group": null,
+              "uuid": "8ab73a96-7725-44f7-99c1-59adddfb84b5"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "name": "Start -> Get Finding Details",
-              "targetStep": "/api/3/workflow_steps/380b26ae-349c-4730-84bd-f1caf5609a4f",
-              "sourceStep": "/api/3/workflow_steps/d4d22c02-7f77-4fdf-bf1a-93dd9fe11e91",
+              "name": "Start -> List of Findings",
+              "targetStep": "/api/3/workflow_steps/8ab73a96-7725-44f7-99c1-59adddfb84b5",
+              "sourceStep": "/api/3/workflow_steps/52e9c2a5-bdd9-4402-993d-d22bfc41c6d7",
               "label": null,
               "isExecuted": false,
-              "uuid": "ef4f8c3b-accc-43eb-87bb-a6ff94a48a25"
+              "uuid": "adb92cce-4b70-4a5e-80ff-2d10a2793d9f"
             }
           ],
+          "groups": [],
           "priority": null,
-          "uuid": "af4744cf-ac69-4347-a4d0-371696718578",
+          "uuid": "4b77517e-a3f9-45dd-abe3-8675a2b3e579",
+          "id": 3905,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "aws",
             "aws-access-analyzer"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Update Findings Status",
+          "aliasName": null,
+          "tag": "#AWS Access Analyzer",
+          "description": "Updates the status for the specified findings.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1662467734,
+          "collection": "/api/3/workflow_collections/6e953341-a09a-4f80-a9da-7a946d4905a3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/a3a9be36-6053-4ffa-94b3-5226ff9eff5c",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "d9b9b497-72fb-4372-8a82-49a073114868",
+                "title": "AWS Access Analyzer: Update Findings Status",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "a3a9be36-6053-4ffa-94b3-5226ff9eff5c"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Findings Status",
+              "description": null,
+              "arguments": {
+                "name": "AWS Access Analyzer",
+                "config": "''",
+                "params": {
+                  "ids": [],
+                  "status": "ACTIVE",
+                  "assume_role": false,
+                  "client_token": ""
+                },
+                "version": "1.1.0",
+                "connector": "aws-access-analyzer",
+                "operation": "update_findings",
+                "operationTitle": "Update Findings Status",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "eb3ff13d-3839-44c9-9b6e-8cdad09a0a0b"
+            }
           ],
-          "id": 13236,
-          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1650286359,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1650286916,
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Update Findings Status",
+              "targetStep": "/api/3/workflow_steps/eb3ff13d-3839-44c9-9b6e-8cdad09a0a0b",
+              "sourceStep": "/api/3/workflow_steps/a3a9be36-6053-4ffa-94b3-5226ff9eff5c",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "672ad69a-e23d-4e60-9f54-5daa75d9f171"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "9bbaae51-66cb-4d1d-afff-fc9bf445e27c",
+          "id": 3904,
           "owners": [],
-          "isPrivate": false
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "aws",
+            "aws-access-analyzer"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Start Resource Scan",
+          "aliasName": null,
+          "tag": "#AWS Access Analyzer",
+          "description": "Immediately starts a scan of the policies applied to the specified resource.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1662467734,
+          "collection": "/api/3/workflow_collections/6e953341-a09a-4f80-a9da-7a946d4905a3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/9963b816-7ea7-4671-8f58-a94f32cf15a7",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start Resource Scan",
+              "description": null,
+              "arguments": {
+                "name": "AWS Access Analyzer",
+                "config": "''",
+                "params": {
+                  "assume_role": false
+                },
+                "version": "1.1.0",
+                "connector": "aws-access-analyzer",
+                "operation": "start_resource_scan",
+                "operationTitle": "Start Resource Scan",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "778bd66a-a4e5-487a-b190-8f289bbf609c"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "e4df901a-8cc2-4dfb-aac5-bc145b2472c2",
+                "title": "AWS Access Analyzer: Start Resource Scan",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "9963b816-7ea7-4671-8f58-a94f32cf15a7"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Start Resource Scan",
+              "targetStep": "/api/3/workflow_steps/778bd66a-a4e5-487a-b190-8f289bbf609c",
+              "sourceStep": "/api/3/workflow_steps/9963b816-7ea7-4671-8f58-a94f32cf15a7",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "e1181ec4-a89a-490c-ab37-853d7a102497"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "aebbaa1e-93b6-42ff-87df-cd024a52ccd8",
+          "id": 3907,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "aws",
+            "aws-access-analyzer"
+          ]
         }
       ]
     }
