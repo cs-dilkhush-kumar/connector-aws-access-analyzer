@@ -147,7 +147,7 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "select the type of analyzers.",
+          "tooltip": "Select the type of analyzers.",
           "description": "Select the type of analyzers that you want to retrieve using AWS Access Analyzer. You can choose either 'ACCOUNT' or 'ORGANIZATION'.",
           "options": [
             "ACCOUNT",
@@ -263,7 +263,7 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "tooltip": "select the type of analyzers.",
+          "tooltip": "Select the type of analyzers.",
           "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
           "options": [
             "ACCOUNT",
@@ -336,7 +336,7 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "tooltip": "select the type of analyzers.",
+          "tooltip": "Select the type of analyzers.",
           "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
           "options": [
             "ACCOUNT",
@@ -409,7 +409,7 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "select the name of analyzers.",
+          "tooltip": "Select the name of analyzers.",
           "description": "Select the name of the analyzer whose details you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_names\" to dynamically populate the Analyzer Name's drop-down selections. ",
           "apiOperation": "list_analyzers_only_names"
         }
@@ -493,7 +493,7 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "select the arn of analyzers.",
+          "tooltip": "Select the arn of analyzers.",
           "description": "Select the ARN of the analyzer whose analyzed resources you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
         },
@@ -504,7 +504,7 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "select the type of resources.",
+          "tooltip": "Select the type of resources.",
           "description": "Select the type of resources you want to retrieve using AWS Access Analyzer. You can choose from resource types such as AWS::IAM::Role, AWS::S3::Bucket, AWS::KMS::Key, etc. ",
           "options": [
             "AWS::S3::Bucket",
@@ -614,7 +614,7 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "tooltip": "select the arn of analyzers.",
+          "tooltip": "Select the arn of analyzers.",
           "description": "Select the arn of analyzers from list",
           "apiOperation": "list_analyzers_only_arn"
         },
@@ -625,7 +625,7 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "tooltip": "select the type of resources.",
+          "tooltip": "Select the type of resources.",
           "description": "Select the type of resources",
           "options": [
             "AWS::S3::Bucket",
@@ -703,7 +703,7 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "select the arn of analyzers.",
+          "tooltip": "Select the arn of analyzers.",
           "description": "Select the ARN of the analyzer whose analyzed resource details you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
         },
@@ -714,7 +714,7 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "select the arn of resources.",
+          "tooltip": "Select the arn of resources.",
           "description": "Select the ARN of resources that were analyzed using the specified analyzer. This parameter makes an API call named \"list_analyzed_resources_only_arn\" to dynamically populate the Resource ARN's drop-down selections. ",
           "apiOperation": "list_analyzed_resources_only_arn"
         }
@@ -802,7 +802,7 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "select the arn of analyzers.",
+          "tooltip": "Select the arn of analyzers.",
           "description": "Select the ARN of the analyzer whose findings you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
         },
@@ -826,7 +826,7 @@
           "editable": true,
           "visible": true,
           "value": null,
-          "placeholder": {},
+          "placeholder": "{}",
           "tooltip": "Specifies the filter query.",
           "description": "(Optional) Specify a query using which you want to filter the finding list retrieved using AWS Access Analyzer. "
         },
@@ -838,7 +838,7 @@
           "editable": true,
           "visible": true,
           "value": null,
-          "placeholder": {},
+          "placeholder": "{}",
           "tooltip": "Specifies the sort attributes",
           "description": "(Optional) Specify the attributes using which you want to sort the finding list retrieved using AWS Access Analyzer. "
         },
@@ -953,7 +953,7 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "select the arn of analyzers.",
+          "tooltip": "Select the arn of analyzers.",
           "description": "Select the ARN of the analyzer whose finding details you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
         },
@@ -1064,7 +1064,7 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "select the arn of analyzers.",
+          "tooltip": "Select the arn of analyzers.",
           "description": "Select the ARN of the analyzer using which you want to scan the policies on the specified resource. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
         },
@@ -1075,7 +1075,7 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "select the arn of resources.",
+          "tooltip": "Select the arn of resources.",
           "description": "Select the ARN of resources whose associated policies you want to scan using the specified analyzer. This parameter makes an API call named \"list_analyzed_resources_only_arn\" to dynamically populate the Resource ARN's drop-down selections. ",
           "apiOperation": "list_analyzed_resources_only_arn"
         }
@@ -1145,7 +1145,7 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "select the arn of analyzers.",
+          "tooltip": "Select the arn of analyzers.",
           "description": "Select the ARN of the analyzer whose findings' status you want to update using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
         },
@@ -1156,9 +1156,9 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "select the arn of resources.",
+          "tooltip": "Select the arn of resources.",
           "description": "Select the ARN of resources whose findings' status you want to update using the specified analyzer. This parameter makes an API call named \"list_analyzed_resources_only_arn\" to dynamically populate the Resource ARN's drop-down selections. ",
-          "apiOperation": ""
+          "apiOperation": "list_analyzed_resources_only_arn"
         },
         {
           "title": "ID List",

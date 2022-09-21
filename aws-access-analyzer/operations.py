@@ -123,7 +123,7 @@ def list_analyzed_resources(config, params):
 
 
 #helper operation for get analyzed resources
-def list_analyzed_resources_only_arns(config, params):
+def list_analyzed_resources_only_arn(config, params):
     client = _get_aws_client(config, params, 'accessanalyzer')
     analyzer_arn = params.get("analyzer_arn")
     resource_type = params.get("resource_type") # 'AWS::S3::Bucket' | 'AWS::IAM::Role' | 'AWS::SQS::Queue' | 'AWS::Lambda::Function' | 'AWS::Lambda::LayerVersion' | 'AWS::KMS::Key' | 'AWS::SecretsManager::Secret'
@@ -233,6 +233,7 @@ operations = {
     "list_analyzers_only_arn": list_analyzers_only_arn,
     "get_analyzers": get_analyzers,
     "list_analyzed_resources": list_analyzed_resources,
+    "list_analyzed_resources_only_arn": list_analyzed_resources_only_arn,
     "get_analyzed_resources": get_analyzed_resources,
     "list_findings": list_findings,
     "get_findings": get_findings,
