@@ -162,7 +162,7 @@
           "editable": true,
           "visible": true,
           "value": 10,
-          "placeholder": 10,
+          "placeholder": "10",
           "tooltip": "Specifies the maximum size of analyzer list",
           "description": "Specify the maximum size of the analyzer list that you want to retrieve using AWS Access Analyzer."
         },
@@ -403,6 +403,20 @@
           }
         },
         {
+          "title": "Analyzer Type",
+          "type": "select",
+          "name": "type",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Select the type of analyzers.",
+          "description": "Select the type of analyzers that you want to retrieve using AWS Access Analyzer. You can choose either 'ACCOUNT' or 'ORGANIZATION'.",
+          "options": [
+            "ACCOUNT",
+            "ORGANIZATION"
+          ]
+        },
+        {
           "title": "Analyzer Name",
           "type": "select",
           "name": "analyzer_name",
@@ -485,6 +499,20 @@
               }
             ]
           }
+        },
+        {
+          "title": "Analyzer Type",
+          "type": "select",
+          "name": "type",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Select the type of analyzers.",
+          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
+          "options": [
+            "ACCOUNT",
+            "ORGANIZATION"
+          ]
         },
         {
           "title": "Analyzer ARN",
@@ -608,6 +636,20 @@
           }
         },
         {
+          "title": "Analyzer Type",
+          "type": "select",
+          "name": "type",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Select the type of analyzers.",
+          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
+          "options": [
+            "ACCOUNT",
+            "ORGANIZATION"
+          ]
+        },
+        {
           "title": "Analyzer ARN",
           "type": "select",
           "name": "analyzer_arn",
@@ -697,6 +739,20 @@
           }
         },
         {
+          "title": "Analyzer Type",
+          "type": "select",
+          "name": "type",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Select the type of analyzers.",
+          "description": "Select the type of analyzers that you want to retrieve using AWS Access Analyzer. You can choose either 'ACCOUNT' or 'ORGANIZATION'.",
+          "options": [
+            "ACCOUNT",
+            "ORGANIZATION"
+          ]
+        },
+        {
           "title": "Analyzer ARN",
           "type": "select",
           "name": "analyzer_arn",
@@ -706,6 +762,25 @@
           "tooltip": "Select the arn of analyzers.",
           "description": "Select the ARN of the analyzer whose analyzed resource details you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
+        },
+        {
+          "title": "Resource Type",
+          "type": "select",
+          "name": "resource_type",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Select the type of resources.",
+          "description": "Select the type of resources",
+          "options": [
+            "AWS::S3::Bucket",
+            "AWS::IAM::Role",
+            "AWS::SQS::Queue",
+            "AWS::Lambda::Function",
+            "AWS::Lambda::LayerVersion",
+            "AWS::KMS::Key",
+            "AWS::SecretsManager::Secret"
+          ]
         },
         {
           "title": "Resource ARN",
@@ -794,6 +869,20 @@
               }
             ]
           }
+        },
+        {
+          "title": "Analyzer Type",
+          "type": "select",
+          "name": "type",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Select the type of analyzers.",
+          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
+          "options": [
+            "ACCOUNT",
+            "ORGANIZATION"
+          ]
         },
         {
           "title": "Analyzer ARN",
@@ -947,6 +1036,20 @@
           }
         },
         {
+          "title": "Analyzer Type",
+          "type": "select",
+          "name": "type",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Select the type of analyzers.",
+          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
+          "options": [
+            "ACCOUNT",
+            "ORGANIZATION"
+          ]
+        },
+        {
           "title": "Analyzer ARN",
           "type": "select",
           "name": "analyzer_arn",
@@ -1058,6 +1161,20 @@
           }
         },
         {
+          "title": "Analyzer Type",
+          "type": "select",
+          "name": "type",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Select the type of analyzers.",
+          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
+          "options": [
+            "ACCOUNT",
+            "ORGANIZATION"
+          ]
+        },
+        {
           "title": "Analyzer ARN",
           "type": "select",
           "name": "analyzer_arn",
@@ -1067,6 +1184,25 @@
           "tooltip": "Select the arn of analyzers.",
           "description": "Select the ARN of the analyzer using which you want to scan the policies on the specified resource. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
+        },
+        {
+          "title": "Resource Type",
+          "type": "select",
+          "name": "resource_type",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Select the type of resources.",
+          "description": "Select the type of resources",
+          "options": [
+            "AWS::S3::Bucket",
+            "AWS::IAM::Role",
+            "AWS::SQS::Queue",
+            "AWS::Lambda::Function",
+            "AWS::Lambda::LayerVersion",
+            "AWS::KMS::Key",
+            "AWS::SecretsManager::Secret"
+          ]
         },
         {
           "title": "Resource ARN",
@@ -1139,6 +1275,20 @@
           }
         },
         {
+          "title": "Analyzer Type",
+          "type": "select",
+          "name": "type",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Select the type of analyzers.",
+          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
+          "options": [
+            "ACCOUNT",
+            "ORGANIZATION"
+          ]
+        },
+        {
           "title": "Analyzer ARN",
           "type": "select",
           "name": "analyzer_arn",
@@ -1148,6 +1298,25 @@
           "tooltip": "Select the arn of analyzers.",
           "description": "Select the ARN of the analyzer whose findings' status you want to update using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
+        },
+        {
+          "title": "Resource Type",
+          "type": "select",
+          "name": "resource_type",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Select the type of resources.",
+          "description": "Select the type of resources",
+          "options": [
+            "AWS::S3::Bucket",
+            "AWS::IAM::Role",
+            "AWS::SQS::Queue",
+            "AWS::Lambda::Function",
+            "AWS::Lambda::LayerVersion",
+            "AWS::KMS::Key",
+            "AWS::SecretsManager::Secret"
+          ]
         },
         {
           "title": "Resource ARN",
@@ -1168,7 +1337,7 @@
           "editable": true,
           "visible": true,
           "value": [],
-          "placeholder": ["id1", "id2"],
+          "placeholder": "[\"id1\", \"id2\"]",
           "tooltip": "Comma separated list of ID's.",
           "description": "Specify a comma-separated list of findings' IDs whose status you want to update using AWS Access Analyzer. "
         },
@@ -1200,7 +1369,7 @@
         }
       ],
       "enabled": true,
-      "output_schema": null
+      "output_schema": {}
     }
   ]
 

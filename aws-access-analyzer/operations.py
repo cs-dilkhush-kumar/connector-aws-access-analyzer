@@ -4,13 +4,13 @@
   FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
   Copyright end """
 
-
 import boto3
 from connectors.core.connector import get_logger, ConnectorError
 from .utils import _get_aws_client, _get_temp_credentials
 
 logger = get_logger('aws-access-analyzer')
 TEMP_CRED_ENDPOINT = 'http://169.254.169.254/latest/meta-data/iam/security-credentials/{}'
+
 
 def remove_unwanted_param(params):
     try:
@@ -23,6 +23,7 @@ def remove_unwanted_param(params):
     except Exception as Err:
         logger.exception(Err)
         raise ConnectorError(Err)
+
 
 def check_health(config):
     try:
@@ -53,8 +54,8 @@ def check_health(config):
 def list_analyzers(config, params):
     client = _get_aws_client(config, params, 'accessanalyzer')
     size = params.get("size")
-    type = params.get("type") # 'ACCOUNT' | 'ORGANIZATION'
-    next_token = params.get("next_token", "") # optional/ not required for first time.
+    type = params.get("type")  # 'ACCOUNT' | 'ORGANIZATION'
+    next_token = params.get("next_token", "")  # optional/ not required for first time.
     response = client.list_analyzers(
         maxResults=size,
         nextToken=next_token,
@@ -65,7 +66,7 @@ def list_analyzers(config, params):
 
 def list_analyzers_only_names(config, params):
     client = _get_aws_client(config, params, 'accessanalyzer')
-    type = params.get("type") # 'ACCOUNT' | 'ORGANIZATION'
+    type = params.get("type")  # 'ACCOUNT' | 'ORGANIZATION'
     if type is None or len(type) == 0:
         return []
     response = client.list_analyzers(
@@ -79,7 +80,7 @@ def list_analyzers_only_names(config, params):
 
 def list_analyzers_only_arn(config, params):
     client = _get_aws_client(config, params, 'accessanalyzer')
-    type = params.get("type") # 'ACCOUNT' | 'ORGANIZATION'
+    type = params.get("type")  # 'ACCOUNT' | 'ORGANIZATION'
     if type is None or len(type) == 0:
         return []
     response = client.list_analyzers(
@@ -104,9 +105,10 @@ def list_analyzed_resources(config, params):
     client = _get_aws_client(config, params, 'accessanalyzer')
     analyzer_arn = params.get("analyzer_arn")
     size = params.get("size")
-    resource_type = params.get("resource_type") # 'AWS::S3::Bucket' | 'AWS::IAM::Role' | 'AWS::SQS::Queue' | 'AWS::Lambda::Function' | 'AWS::Lambda::LayerVersion' | 'AWS::KMS::Key' | 'AWS::SecretsManager::Secret'
-    next_token = params.get("next_token") # optional/ not required for first time.
-    if next_token and len(next_token)>0:
+    resource_type = params.get(
+        "resource_type")  # 'AWS::S3::Bucket' | 'AWS::IAM::Role' | 'AWS::SQS::Queue' | 'AWS::Lambda::Function' | 'AWS::Lambda::LayerVersion' | 'AWS::KMS::Key' | 'AWS::SecretsManager::Secret'
+    next_token = params.get("next_token")  # optional/ not required for first time.
+    if next_token and len(next_token) > 0:
         response = client.list_analyzed_resources(
             analyzerArn=analyzer_arn,
             maxResults=size,
@@ -122,11 +124,12 @@ def list_analyzed_resources(config, params):
     return response
 
 
-#helper operation for get analyzed resources
+# helper operation for get analyzed resources
 def list_analyzed_resources_only_arn(config, params):
     client = _get_aws_client(config, params, 'accessanalyzer')
     analyzer_arn = params.get("analyzer_arn")
-    resource_type = params.get("resource_type") # 'AWS::S3::Bucket' | 'AWS::IAM::Role' | 'AWS::SQS::Queue' | 'AWS::Lambda::Function' | 'AWS::Lambda::LayerVersion' | 'AWS::KMS::Key' | 'AWS::SecretsManager::Secret'
+    resource_type = params.get(
+        "resource_type")  # 'AWS::S3::Bucket' | 'AWS::IAM::Role' | 'AWS::SQS::Queue' | 'AWS::Lambda::Function' | 'AWS::Lambda::LayerVersion' | 'AWS::KMS::Key' | 'AWS::SecretsManager::Secret'
     if analyzer_arn is None or len(analyzer_arn) == 0 or resource_type is None or len(resource_type) == 0:
         return []
     response = client.list_analyzed_resources(
@@ -156,8 +159,8 @@ def list_findings(config, params):
     size = params.get("size", 10)
     filter = params.get("filter", {})
     sort = params.get("sort", {})
-    next_token = params.get("next_token") # optional and not required in first time
-    if next_token and len(next_token)>0 and sort:
+    next_token = params.get("next_token")  # optional and not required in first time
+    if next_token and len(next_token) > 0 and sort:
         response = client.list_findings(
             analyzerArn=analyzer_arn,
             filter=filter,
@@ -215,8 +218,8 @@ def update_findings(config, params):
     analyzer_arn = params.get("analyzer_arn")
     resource_arn = params.get("resource_arn")
     client_token = params.get("client_token")
-    ids = params.get("ids") # json list
-    status = params.get("status") # 'ACTIVE' | 'ARCHIVED'
+    ids = params.get("ids")  # json list
+    status = params.get("status")  # 'ACTIVE' | 'ARCHIVED'
     response = client.update_findings(
         analyzerArn=analyzer_arn,
         clientToken=client_token,
