@@ -914,8 +914,8 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "value": null,
-          "placeholder": "{}",
+          "value": {},
+          "placeholder": {},
           "tooltip": "Specifies the filter query.",
           "description": "(Optional) Specify a query using which you want to filter the finding list retrieved using AWS Access Analyzer. "
         },
@@ -926,8 +926,8 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "value": null,
-          "placeholder": "{}",
+          "value": {},
+          "placeholder": {},
           "tooltip": "Specifies the sort attributes",
           "description": "(Optional) Specify the attributes using which you want to sort the finding list retrieved using AWS Access Analyzer. "
         },
@@ -1337,7 +1337,7 @@
           "editable": true,
           "visible": true,
           "value": [],
-          "placeholder": "[\"id1\", \"id2\"]",
+          "placeholder": ["id1", "id2"],
           "tooltip": "Comma separated list of ID's.",
           "description": "Specify a comma-separated list of findings' IDs whose status you want to update using AWS Access Analyzer. "
         },
