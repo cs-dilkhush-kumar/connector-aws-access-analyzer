@@ -28,7 +28,7 @@ def remove_unwanted_param(params):
 def check_health(config):
     try:
         config_type = config.get('config_type')
-        if config_type == "IAM Role":
+        if config_type == "AWS Instance IAM Role":
             if _get_temp_credentials(config):
                 return True
             else:

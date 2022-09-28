@@ -22,20 +22,20 @@
         "tooltip": "AWS configuration type",
         "description": "Type of configuration using which you will provide credentials to access AWS Access Analyzer and perform automated actions. You can select betweenIAM RoleorAccess Credentials. If you selectIAM Role, then enter details in the following field(s): AWS Instance IAM Role: IAM Role of your AWS instance to access AWS services. If you selectAccess Credentials, then enter details in the following field(s): AWS Region: AWS region of your account to access the AWS Access Analyzer. AWS Access Key ID: ID of the AWS Access Key to access AWS services. AWS Secret Access Key: Key of the AWS Secret Access to access AWS services.",
         "options": [
-          "IAM Role",
-          "Access Credentials"
+          "Access Credentials",
+          "AWS Instance IAM Role"
         ],
         "onchange": {
-          "IAM Role": [
+          "AWS Instance IAM Role": [
             {
-              "title": "AWS Instance IAM Role",
+              "title": "AWS Instance IAM Role Name",
               "required": true,
               "editable": true,
               "visible": true,
               "type": "text",
               "name": "aws_iam_role",
-              "tooltip": "IAM Role of your AWS instance to access AWS services.",
-              "description": "IAM Role of your AWS instance to access AWS services."
+              "tooltip": "IAM Role Name of your AWS Instance where FortiSOAR installed, to access AWS services.",
+              "description": "IAM Role Name of your AWS Instance where FortiSOAR installed, to access AWS services."
             }
           ],
           "Access Credentials": [
