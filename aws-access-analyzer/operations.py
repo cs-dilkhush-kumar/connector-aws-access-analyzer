@@ -104,7 +104,7 @@ def get_analyzers(config, params):
 def list_analyzed_resources(config, params):
     client = _get_aws_client(config, params, 'accessanalyzer')
     analyzer_arn = params.get("analyzer_arn")
-    size = params.get("size")
+    size = params.get("size", 10)
     resource_type = params.get(
         "resource_type")  # 'AWS::S3::Bucket' | 'AWS::IAM::Role' | 'AWS::SQS::Queue' | 'AWS::Lambda::Function' | 'AWS::Lambda::LayerVersion' | 'AWS::KMS::Key' | 'AWS::SecretsManager::Secret'
     next_token = params.get("next_token")  # optional/ not required for first time.
@@ -157,13 +157,14 @@ def list_findings(config, params):
     client = _get_aws_client(config, params, 'accessanalyzer')
     analyzer_arn = params.get("analyzer_arn")
     size = params.get("size", 10)
-    filter = params.get("filter", {})
+    filter_q = params.get("filter", {})
     sort = params.get("sort", {})
+
     next_token = params.get("next_token")  # optional and not required in first time
     if next_token and len(next_token) > 0 and sort:
         response = client.list_findings(
             analyzerArn=analyzer_arn,
-            filter=filter,
+            filter=filter_q,
             maxResults=size,
             nextToken=next_token,
             sort=sort
@@ -171,21 +172,21 @@ def list_findings(config, params):
     elif sort:
         response = client.list_findings(
             analyzerArn=analyzer_arn,
-            filter=filter,
+            filter=filter_q,
             maxResults=size,
             sort=sort
         )
     elif next_token:
         response = client.list_findings(
             analyzerArn=analyzer_arn,
-            filter=filter,
+            filter=filter_q,
             maxResults=size,
             nextToken=next_token
         )
     else:
         response = client.list_findings(
             analyzerArn=analyzer_arn,
-            filter=filter,
+            filter=filter_q,
             maxResults=size,
         )
     return response
@@ -218,8 +219,8 @@ def update_findings(config, params):
     analyzer_arn = params.get("analyzer_arn")
     resource_arn = params.get("resource_arn")
     client_token = params.get("client_token")
-    ids = params.get("ids")  # json list
-    status = params.get("status")  # 'ACTIVE' | 'ARCHIVED'
+    ids = params.get("ids", [])  # json list
+    status = params.get("status", "ACTIVE")  # 'ACTIVE' | 'ARCHIVED'
     response = client.update_findings(
         analyzerArn=analyzer_arn,
         clientToken=client_token,

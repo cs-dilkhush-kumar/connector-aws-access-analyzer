@@ -202,152 +202,6 @@
     }
     },
     {
-      "operation": "list_analyzers_only_names",
-      "title": "List Analyzers only names.",
-      "category": "investigation",
-      "annotation": "list_analyzers_only_names",
-      "description": "Retrieves a list of analyzers only name.",
-      "visible": false,
-      "parameters": [
-        {
-          "title": "Assume a Role",
-          "type": "checkbox",
-          "name": "assume_role",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Enable to assume a role",
-          "description": "Select this option to assume a role. This parameter is required, if you have specified 'IAM Role' as the 'Configuration Type'. If you have specified 'Access Credentials' as the 'Configuration Type', then this parameter is optional. If you choose'True', then you must specify the following parameters: AWS Region: AWS region of your account to access the AWS Access Analyzer Role ARN: ARN of the role that you want assume to execute this action on AWS. Session Name: Name of the session that will be created to execute this action on AWS.",
-          "value": false,
-          "onchange": {
-            "true": [
-              {
-                "title": "AWS Region",
-                "required": true,
-                "editable": true,
-                "visible": true,
-                "type": "text",
-                "name": "aws_region",
-                "placeholder": "e.g. us-east-2",
-                "tooltip": "Your account's AWS region",
-                "description": "AWS region of your account to access the AWS Access Analyzer"
-              },
-              {
-                "title": "Role ARN",
-                "type": "text",
-                "name": "role_arn",
-                "required": true,
-                "editable": true,
-                "visible": true,
-                "placeholder": "arn:aws:iam::{{account_id}}:role/{{role_name}}",
-                "tooltip": "ARN of the role that you want assume to execute this action on AWS.",
-                "description": "ARN of the role that you want assume to execute this action on AWS."
-              },
-              {
-                "title": "Session Name",
-                "type": "text",
-                "name": "session_name",
-                "required": true,
-                "editable": true,
-                "visible": true,
-                "tooltip": "Name of the session that will be created to execute this action on AWS.",
-                "description": "Name of the session that will be created to execute this action on AWS."
-              }
-            ]
-          }
-        },
-        {
-          "title": "Analyzer Type",
-          "type": "select",
-          "name": "type",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of analyzers.",
-          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
-          "options": [
-            "ACCOUNT",
-            "ORGANIZATION"
-          ]
-        }
-      ],
-      "enabled": true,
-      "output_schema": []
-    },
-    {
-      "operation": "list_analyzers_only_arn",
-      "title": "List Analyzers only ARNs.",
-      "category": "investigation",
-      "annotation": "list_analyzers_only_arn",
-      "description": "Retrieves a list of analyzers only arn.",
-      "visible": false,
-      "parameters": [
-        {
-          "title": "Assume a Role",
-          "type": "checkbox",
-          "name": "assume_role",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Enable to assume a role",
-          "description": "Select this option to assume a role. This parameter is required, if you have specified 'IAM Role' as the 'Configuration Type'. If you have specified 'Access Credentials' as the 'Configuration Type', then this parameter is optional. If you choose'True', then you must specify the following parameters: AWS Region: AWS region of your account to access the AWS Access Analyzer Role ARN: ARN of the role that you want assume to execute this action on AWS. Session Name: Name of the session that will be created to execute this action on AWS.",
-          "value": false,
-          "onchange": {
-            "true": [
-              {
-                "title": "AWS Region",
-                "required": true,
-                "editable": true,
-                "visible": true,
-                "type": "text",
-                "name": "aws_region",
-                "placeholder": "e.g. us-east-2",
-                "tooltip": "Your account's AWS region",
-                "description": "AWS region of your account to access the AWS Access Analyzer"
-              },
-              {
-                "title": "Role ARN",
-                "type": "text",
-                "name": "role_arn",
-                "required": true,
-                "editable": true,
-                "visible": true,
-                "placeholder": "arn:aws:iam::{{account_id}}:role/{{role_name}}",
-                "tooltip": "ARN of the role that you want assume to execute this action on AWS.",
-                "description": "ARN of the role that you want assume to execute this action on AWS."
-              },
-              {
-                "title": "Session Name",
-                "type": "text",
-                "name": "session_name",
-                "required": true,
-                "editable": true,
-                "visible": true,
-                "tooltip": "Name of the session that will be created to execute this action on AWS.",
-                "description": "Name of the session that will be created to execute this action on AWS."
-              }
-            ]
-          }
-        },
-        {
-          "title": "Analyzer Type",
-          "type": "select",
-          "name": "type",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of analyzers.",
-          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
-          "options": [
-            "ACCOUNT",
-            "ORGANIZATION"
-          ]
-        }
-      ],
-      "enabled": true,
-      "output_schema": []
-    },
-    {
       "operation": "get_analyzers",
       "title": "Get analyzer details",
       "category": "investigation",
@@ -403,29 +257,14 @@
           }
         },
         {
-          "title": "Analyzer Type",
-          "type": "select",
-          "name": "type",
-          "required": true,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of analyzers.",
-          "description": "Select the type of analyzers that you want to retrieve using AWS Access Analyzer. You can choose either 'ACCOUNT' or 'ORGANIZATION'.",
-          "options": [
-            "ACCOUNT",
-            "ORGANIZATION"
-          ]
-        },
-        {
           "title": "Analyzer Name",
-          "type": "select",
+          "type": "text",
           "name": "analyzer_name",
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "Select the name of analyzers.",
-          "description": "Select the name of the analyzer whose details you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_names\" to dynamically populate the Analyzer Name's drop-down selections. ",
-          "apiOperation": "list_analyzers_only_names"
+          "tooltip": "Specify the name of analyzers.",
+          "description": "Specify the name of the analyzer whose details you want to retrieve using AWS Access Analyzer."
         }
       ],
       "enabled": true,
@@ -501,35 +340,20 @@
           }
         },
         {
-          "title": "Analyzer Type",
-          "type": "select",
-          "name": "type",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of analyzers.",
-          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
-          "options": [
-            "ACCOUNT",
-            "ORGANIZATION"
-          ]
-        },
-        {
           "title": "Analyzer ARN",
-          "type": "select",
+          "type": "text",
           "name": "analyzer_arn",
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "Select the arn of analyzers.",
-          "description": "Select the ARN of the analyzer whose analyzed resources you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
-          "apiOperation": "list_analyzers_only_arn"
+          "tooltip": "Specify the arn of analyzers.",
+          "description": "Specify the ARN of the analyzer whose analyzed resources you want to retrieve using AWS Access Analyzer."
         },
         {
           "title": "Resource Type",
           "type": "select",
           "name": "resource_type",
-          "required": true,
+          "required": false,
           "editable": true,
           "visible": true,
           "tooltip": "Select the type of resources.",
@@ -548,7 +372,7 @@
           "title": "Max Result Size",
           "type": "integer",
           "name": "size",
-          "required": true,
+          "required": false,
           "editable": true,
           "visible": true,
           "value": 10,
@@ -579,109 +403,6 @@
          ],
          "nextToken":""
       }
-    },
-    {
-      "operation": "list_analyzed_resources_only_arn",
-      "title": "List of Analyzed Resources",
-      "category": "investigation",
-      "annotation": "list_analyzed_resources_only_arn",
-      "description": "Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer.",
-      "visible": false,
-      "parameters": [
-        {
-          "title": "Assume a Role",
-          "type": "checkbox",
-          "name": "assume_role",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Enable to assume a role",
-          "description": "Select this option to assume a role. This parameter is required, if you have specified 'IAM Role' as the 'Configuration Type'. If you have specified 'Access Credentials' as the 'Configuration Type', then this parameter is optional. If you choose'True', then you must specify the following parameters: AWS Region: AWS region of your account to access the AWS Access Analyzer Role ARN: ARN of the role that you want assume to execute this action on AWS. Session Name: Name of the session that will be created to execute this action on AWS.",
-          "value": false,
-          "onchange": {
-            "true": [
-              {
-                "title": "AWS Region",
-                "required": true,
-                "editable": true,
-                "visible": true,
-                "type": "text",
-                "name": "aws_region",
-                "placeholder": "e.g. us-east-2",
-                "tooltip": "Your account's AWS region",
-                "description": "AWS region of your account to access the AWS Access Analyzer"
-              },
-              {
-                "title": "Role ARN",
-                "type": "text",
-                "name": "role_arn",
-                "required": true,
-                "editable": true,
-                "visible": true,
-                "placeholder": "arn:aws:iam::{{account_id}}:role/{{role_name}}",
-                "tooltip": "ARN of the role that you want assume to execute this action on AWS.",
-                "description": "ARN of the role that you want assume to execute this action on AWS."
-              },
-              {
-                "title": "Session Name",
-                "type": "text",
-                "name": "session_name",
-                "required": true,
-                "editable": true,
-                "visible": true,
-                "tooltip": "Name of the session that will be created to execute this action on AWS.",
-                "description": "Name of the session that will be created to execute this action on AWS."
-              }
-            ]
-          }
-        },
-        {
-          "title": "Analyzer Type",
-          "type": "select",
-          "name": "type",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of analyzers.",
-          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
-          "options": [
-            "ACCOUNT",
-            "ORGANIZATION"
-          ]
-        },
-        {
-          "title": "Analyzer ARN",
-          "type": "select",
-          "name": "analyzer_arn",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the arn of analyzers.",
-          "description": "Select the arn of analyzers from list",
-          "apiOperation": "list_analyzers_only_arn"
-        },
-        {
-          "title": "Resource Type",
-          "type": "select",
-          "name": "resource_type",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of resources.",
-          "description": "Select the type of resources",
-          "options": [
-            "AWS::S3::Bucket",
-            "AWS::IAM::Role",
-            "AWS::SQS::Queue",
-            "AWS::Lambda::Function",
-            "AWS::Lambda::LayerVersion",
-            "AWS::KMS::Key",
-            "AWS::SecretsManager::Secret"
-          ]
-        }
-      ],
-      "enabled": true,
-      "output_schema": [""]
     },
     {
       "operation": "get_analyzed_resources",
@@ -739,59 +460,24 @@
           }
         },
         {
-          "title": "Analyzer Type",
-          "type": "select",
-          "name": "type",
-          "required": true,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of analyzers.",
-          "description": "Select the type of analyzers that you want to retrieve using AWS Access Analyzer. You can choose either 'ACCOUNT' or 'ORGANIZATION'.",
-          "options": [
-            "ACCOUNT",
-            "ORGANIZATION"
-          ]
-        },
-        {
           "title": "Analyzer ARN",
-          "type": "select",
+          "type": "text",
           "name": "analyzer_arn",
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "Select the arn of analyzers.",
-          "description": "Select the ARN of the analyzer whose analyzed resource details you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
-          "apiOperation": "list_analyzers_only_arn"
-        },
-        {
-          "title": "Resource Type",
-          "type": "select",
-          "name": "resource_type",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of resources.",
-          "description": "Select the type of resources",
-          "options": [
-            "AWS::S3::Bucket",
-            "AWS::IAM::Role",
-            "AWS::SQS::Queue",
-            "AWS::Lambda::Function",
-            "AWS::Lambda::LayerVersion",
-            "AWS::KMS::Key",
-            "AWS::SecretsManager::Secret"
-          ]
+          "tooltip": "Specify the arn of analyzers.",
+          "description": "Specify the ARN of the analyzer whose analyzed resource details you want to retrieve using AWS Access Analyzer."
         },
         {
           "title": "Resource ARN",
-          "type": "select",
+          "type": "text",
           "name": "resource_arn",
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "Select the arn of resources.",
-          "description": "Select the ARN of resources that were analyzed using the specified analyzer. This parameter makes an API call named \"list_analyzed_resources_only_arn\" to dynamically populate the Resource ARN's drop-down selections. ",
-          "apiOperation": "list_analyzed_resources_only_arn"
+          "tooltip": "Specify the arn of resources.",
+          "description": "Specify the ARN of resources that were analyzed using the specified analyzer."
         }
       ],
       "enabled": true,
@@ -871,35 +557,20 @@
           }
         },
         {
-          "title": "Analyzer Type",
-          "type": "select",
-          "name": "type",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of analyzers.",
-          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
-          "options": [
-            "ACCOUNT",
-            "ORGANIZATION"
-          ]
-        },
-        {
           "title": "Analyzer ARN",
-          "type": "select",
+          "type": "text",
           "name": "analyzer_arn",
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "Select the arn of analyzers.",
-          "description": "Select the ARN of the analyzer whose findings you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
-          "apiOperation": "list_analyzers_only_arn"
+          "tooltip": "Specify the arn of analyzers.",
+          "description": "Specify the ARN of the analyzer whose findings you want to retrieve using AWS Access Analyzer."
         },
         {
           "title": "Max Result Size",
           "type": "integer",
           "name": "size",
-          "required": true,
+          "required": false,
           "editable": true,
           "visible": true,
           "value": 10,
@@ -1036,29 +707,14 @@
           }
         },
         {
-          "title": "Analyzer Type",
-          "type": "select",
-          "name": "type",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of analyzers.",
-          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
-          "options": [
-            "ACCOUNT",
-            "ORGANIZATION"
-          ]
-        },
-        {
           "title": "Analyzer ARN",
-          "type": "select",
+          "type": "text",
           "name": "analyzer_arn",
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "Select the arn of analyzers.",
-          "description": "Select the ARN of the analyzer whose finding details you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
-          "apiOperation": "list_analyzers_only_arn"
+          "tooltip": "Specify the arn of analyzers.",
+          "description": "Specify the ARN of the analyzer whose finding details you want to retrieve using AWS Access Analyzer."
         },
         {
           "title": "ID",
@@ -1161,59 +817,24 @@
           }
         },
         {
-          "title": "Analyzer Type",
-          "type": "select",
-          "name": "type",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of analyzers.",
-          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
-          "options": [
-            "ACCOUNT",
-            "ORGANIZATION"
-          ]
-        },
-        {
           "title": "Analyzer ARN",
-          "type": "select",
+          "type": "text",
           "name": "analyzer_arn",
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "Select the arn of analyzers.",
-          "description": "Select the ARN of the analyzer using which you want to scan the policies on the specified resource. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
-          "apiOperation": "list_analyzers_only_arn"
-        },
-        {
-          "title": "Resource Type",
-          "type": "select",
-          "name": "resource_type",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of resources.",
-          "description": "Select the type of resources",
-          "options": [
-            "AWS::S3::Bucket",
-            "AWS::IAM::Role",
-            "AWS::SQS::Queue",
-            "AWS::Lambda::Function",
-            "AWS::Lambda::LayerVersion",
-            "AWS::KMS::Key",
-            "AWS::SecretsManager::Secret"
-          ]
+          "tooltip": "Specify the arn of analyzers.",
+          "description": "Specify the ARN of the analyzer using which you want to scan the policies on the specified resource."
         },
         {
           "title": "Resource ARN",
-          "type": "select",
+          "type": "text",
           "name": "resource_arn",
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "Select the arn of resources.",
-          "description": "Select the ARN of resources whose associated policies you want to scan using the specified analyzer. This parameter makes an API call named \"list_analyzed_resources_only_arn\" to dynamically populate the Resource ARN's drop-down selections. ",
-          "apiOperation": "list_analyzed_resources_only_arn"
+          "tooltip": "Specify the arn of resources.",
+          "description": "Specify the ARN of resources whose associated policies you want to scan using the specified analyzer."
         }
       ],
       "enabled": true,
@@ -1275,59 +896,24 @@
           }
         },
         {
-          "title": "Analyzer Type",
-          "type": "select",
-          "name": "type",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of analyzers.",
-          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
-          "options": [
-            "ACCOUNT",
-            "ORGANIZATION"
-          ]
-        },
-        {
           "title": "Analyzer ARN",
-          "type": "select",
+          "type": "text",
           "name": "analyzer_arn",
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "Select the arn of analyzers.",
-          "description": "Select the ARN of the analyzer whose findings' status you want to update using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
-          "apiOperation": "list_analyzers_only_arn"
-        },
-        {
-          "title": "Resource Type",
-          "type": "select",
-          "name": "resource_type",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Select the type of resources.",
-          "description": "Select the type of resources",
-          "options": [
-            "AWS::S3::Bucket",
-            "AWS::IAM::Role",
-            "AWS::SQS::Queue",
-            "AWS::Lambda::Function",
-            "AWS::Lambda::LayerVersion",
-            "AWS::KMS::Key",
-            "AWS::SecretsManager::Secret"
-          ]
+          "tooltip": "Specify the arn of analyzers.",
+          "description": "Specify the ARN of the analyzer whose findings' status you want to update using AWS Access Analyzer."
         },
         {
           "title": "Resource ARN",
-          "type": "select",
+          "type": "text",
           "name": "resource_arn",
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "Select the arn of resources.",
-          "description": "Select the ARN of resources whose findings' status you want to update using the specified analyzer. This parameter makes an API call named \"list_analyzed_resources_only_arn\" to dynamically populate the Resource ARN's drop-down selections. ",
-          "apiOperation": "list_analyzed_resources_only_arn"
+          "tooltip": "Specify the arn of resources.",
+          "description": "Specify the ARN of resources whose findings' status you want to update using the specified analyzer."
         },
         {
           "title": "ID List",

@@ -2,7 +2,7 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "5d302eec-a307-428d-be57-d0097c6b9c1a",
+      "uuid": "d3c514d1-b86b-45db-ac48-0b60cb26a57e",
       "@type": "WorkflowCollection",
       "name": "Sample - AWS Access Analyzer - 1.1.0",
       "description": "AWS Access Analyzer helps you identify the resources in your organization and accounts, such as Amazon S3 buckets or IAM roles, shared with an external entity, enabling you to identify unintended access to your resources and data, which is a security risk. ",
@@ -14,8 +14,8 @@
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "0fb3a789-9271-45f6-96e2-13db3ee62bff",
-          "collection": "/api/3/workflow_collections/5d302eec-a307-428d-be57-d0097c6b9c1a",
+          "uuid": "3dc31548-3b95-4203-bcdc-06d1341b4784",
+          "collection": "/api/3/workflow_collections/d3c514d1-b86b-45db-ac48-0b60cb26a57e",
           "triggerLimit": null,
           "description": "Retrieves a list of analyzers based on the analyzer type and other input parameters you have specified. ",
           "name": "List Analyzers",
@@ -28,16 +28,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/fb867146-ab77-4e44-ba69-e0ae4aee4735",
+          "triggerStep": "/api/3/workflow_steps/cded81a5-f755-4532-b5b0-d4273c9a516e",
           "steps": [
             {
-              "uuid": "fb867146-ab77-4e44-ba69-e0ae4aee4735",
+              "uuid": "cded81a5-f755-4532-b5b0-d4273c9a516e",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "ce26c548-2155-4d9d-b8d1-43053b61c181",
+                "route": "acbf2d3d-dcfb-4e43-82d8-f2cb3c7d6777",
                 "title": "AWS Access Analyzer: List Analyzers",
                 "resources": [
                   "alerts"
@@ -57,7 +57,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "15266f3b-fe68-4310-85a9-f6f90f83ba93",
+              "uuid": "d87de94b-e904-41e9-843e-52be70df5568",
               "@type": "WorkflowStep",
               "name": "List Analyzers",
               "description": null,
@@ -86,19 +86,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "eb3ec68d-574c-40d3-8625-175ca9403041",
+              "uuid": "ca72b2bc-3448-4f11-8e24-46bd87fda7c4",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List Analyzers",
-              "sourceStep": "/api/3/workflow_steps/fb867146-ab77-4e44-ba69-e0ae4aee4735",
-              "targetStep": "/api/3/workflow_steps/15266f3b-fe68-4310-85a9-f6f90f83ba93"
+              "sourceStep": "/api/3/workflow_steps/cded81a5-f755-4532-b5b0-d4273c9a516e",
+              "targetStep": "/api/3/workflow_steps/d87de94b-e904-41e9-843e-52be70df5568"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "f550a8ea-3637-403b-81ef-a2b78c70e304",
-          "collection": "/api/3/workflow_collections/5d302eec-a307-428d-be57-d0097c6b9c1a",
+          "uuid": "e5d0ca20-d859-4577-9d9f-896c65e511de",
+          "collection": "/api/3/workflow_collections/d3c514d1-b86b-45db-ac48-0b60cb26a57e",
           "triggerLimit": null,
           "description": "Retrieves information about the specified analyzer based on the analyzer name and other input parameters you have specified.",
           "name": "Get analyzer details",
@@ -111,16 +111,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/d0ea39db-e7ec-4d64-b09e-f1c3c6e20a47",
+          "triggerStep": "/api/3/workflow_steps/1cc0e539-4214-426c-9cde-217fc264fcf8",
           "steps": [
             {
-              "uuid": "d0ea39db-e7ec-4d64-b09e-f1c3c6e20a47",
+              "uuid": "1cc0e539-4214-426c-9cde-217fc264fcf8",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "ce5e664a-48a4-4340-b44a-7cf996e81b1b",
+                "route": "21f22c8d-b89b-4557-86dc-19eb20a2b0f8",
                 "title": "AWS Access Analyzer: Get analyzer details",
                 "resources": [
                   "alerts"
@@ -140,7 +140,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "1f984f1c-3d73-47dd-951a-cfdebb44cb54",
+              "uuid": "46f7ed3c-92d1-4b90-906a-62e22a8ae587",
               "@type": "WorkflowStep",
               "name": "Get analyzer details",
               "description": null,
@@ -167,19 +167,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "e8ae6763-b47f-471b-bda7-ec086c74480d",
+              "uuid": "47d65928-2014-4cab-8746-d547ad5abdf5",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get analyzer details",
-              "sourceStep": "/api/3/workflow_steps/d0ea39db-e7ec-4d64-b09e-f1c3c6e20a47",
-              "targetStep": "/api/3/workflow_steps/1f984f1c-3d73-47dd-951a-cfdebb44cb54"
+              "sourceStep": "/api/3/workflow_steps/1cc0e539-4214-426c-9cde-217fc264fcf8",
+              "targetStep": "/api/3/workflow_steps/46f7ed3c-92d1-4b90-906a-62e22a8ae587"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "d3e72fab-ba62-4f5e-886e-8704b7b61423",
-          "collection": "/api/3/workflow_collections/5d302eec-a307-428d-be57-d0097c6b9c1a",
+          "uuid": "f2730195-cf0e-43a4-b36b-cc6efe2b33f9",
+          "collection": "/api/3/workflow_collections/d3c514d1-b86b-45db-ac48-0b60cb26a57e",
           "triggerLimit": null,
           "description": "Retrieves a list of specified resource types that have been analyzed by the specified analyzer based on the analyzer ARN, resource type, and other input parameters you have specified. ",
           "name": "List of Analyzed Resources",
@@ -192,16 +192,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/3251b462-e029-4998-ba12-5e3d839b403b",
+          "triggerStep": "/api/3/workflow_steps/7f080145-c535-4291-a15b-b91b0e3c00c6",
           "steps": [
             {
-              "uuid": "3251b462-e029-4998-ba12-5e3d839b403b",
+              "uuid": "7f080145-c535-4291-a15b-b91b0e3c00c6",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "b611f4cc-27ac-401c-b522-9afe744d6c17",
+                "route": "405dad68-6293-446c-bbbc-61845779dd64",
                 "title": "AWS Access Analyzer: List of Analyzed Resources",
                 "resources": [
                   "alerts"
@@ -221,7 +221,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "9d8bc9c4-7dd8-49ab-9bb7-b49a8345f06c",
+              "uuid": "9f5205d8-ee0a-40c3-ada7-47cddc06bfce",
               "@type": "WorkflowStep",
               "name": "List of Analyzed Resources",
               "description": null,
@@ -250,19 +250,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "32a2d236-e70f-4347-a57d-94dbe03bc2fd",
+              "uuid": "8213b24d-8f3d-4d2e-a324-b2bd699d2923",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List of Analyzed Resources",
-              "sourceStep": "/api/3/workflow_steps/3251b462-e029-4998-ba12-5e3d839b403b",
-              "targetStep": "/api/3/workflow_steps/9d8bc9c4-7dd8-49ab-9bb7-b49a8345f06c"
+              "sourceStep": "/api/3/workflow_steps/7f080145-c535-4291-a15b-b91b0e3c00c6",
+              "targetStep": "/api/3/workflow_steps/9f5205d8-ee0a-40c3-ada7-47cddc06bfce"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "56b495d2-4073-4dbd-b987-13c56dee82fd",
-          "collection": "/api/3/workflow_collections/5d302eec-a307-428d-be57-d0097c6b9c1a",
+          "uuid": "15b889a5-5a34-49ce-bd13-a28e529d757a",
+          "collection": "/api/3/workflow_collections/d3c514d1-b86b-45db-ac48-0b60cb26a57e",
           "triggerLimit": null,
           "description": "Retrieves information about a resource that was analyzed by the specified analyzer based on the analyzer ARN and resource ARN you have specified. ",
           "name": "Details of an Analyzed Resources",
@@ -275,16 +275,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/3709814c-4a84-4eda-a195-601be6f75680",
+          "triggerStep": "/api/3/workflow_steps/6e814430-5dcc-473d-ac22-01a4d8a43a84",
           "steps": [
             {
-              "uuid": "3709814c-4a84-4eda-a195-601be6f75680",
+              "uuid": "6e814430-5dcc-473d-ac22-01a4d8a43a84",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "9ff26a6a-8a90-4bbd-8c7c-7e67d46f1094",
+                "route": "384a6e9e-a76b-4bd9-9583-9c123f45e7e8",
                 "title": "AWS Access Analyzer: Details of an Analyzed Resources",
                 "resources": [
                   "alerts"
@@ -304,7 +304,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "3a278b2e-7adc-42ea-8bc2-9a4dcea88fb8",
+              "uuid": "4e2956a0-e8d3-4edf-bbf9-ae2b57a30f76",
               "@type": "WorkflowStep",
               "name": "Details of an Analyzed Resources",
               "description": null,
@@ -331,19 +331,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "cf35e325-314d-4b5f-9d60-263b65dd94d2",
+              "uuid": "6d10244e-2b37-426c-940d-8f103b709230",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Details of an Analyzed Resources",
-              "sourceStep": "/api/3/workflow_steps/3709814c-4a84-4eda-a195-601be6f75680",
-              "targetStep": "/api/3/workflow_steps/3a278b2e-7adc-42ea-8bc2-9a4dcea88fb8"
+              "sourceStep": "/api/3/workflow_steps/6e814430-5dcc-473d-ac22-01a4d8a43a84",
+              "targetStep": "/api/3/workflow_steps/4e2956a0-e8d3-4edf-bbf9-ae2b57a30f76"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "d60cab1b-f0f7-4ad8-812f-b5539c16e314",
-          "collection": "/api/3/workflow_collections/5d302eec-a307-428d-be57-d0097c6b9c1a",
+          "uuid": "5326abe8-50a9-4107-bc7b-3f184390bc3e",
+          "collection": "/api/3/workflow_collections/d3c514d1-b86b-45db-ac48-0b60cb26a57e",
           "triggerLimit": null,
           "description": "Retrieves a list of findings generated by the specified analyzer based on the analyzer ARN and other input parameters you have specified. ",
           "name": "List of Findings",
@@ -356,16 +356,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/e2c28d8c-941a-4fae-b90f-0ee2d287871e",
+          "triggerStep": "/api/3/workflow_steps/d981c3b8-9ac3-4af6-8726-f84d1d2578fc",
           "steps": [
             {
-              "uuid": "e2c28d8c-941a-4fae-b90f-0ee2d287871e",
+              "uuid": "d981c3b8-9ac3-4af6-8726-f84d1d2578fc",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "b458b159-d460-4735-9801-c27c9b7255e8",
+                "route": "1e87f9f9-a6b7-4efa-8156-8d19b012dd25",
                 "title": "AWS Access Analyzer: List of Findings",
                 "resources": [
                   "alerts"
@@ -385,7 +385,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "2f2a2516-31f9-495c-8eef-0a7ca5a6caf1",
+              "uuid": "16f23bd2-e82e-432a-abb9-3a39845dbcfe",
               "@type": "WorkflowStep",
               "name": "List of Findings",
               "description": null,
@@ -396,8 +396,8 @@
                 "params": {
                   "assume_role": false,
                   "size": 10,
-                  "filter": null,
-                  "sort": null,
+                  "filter": {},
+                  "sort": {},
                   "next_token": ""
                 },
                 "version": "1.1.0",
@@ -416,19 +416,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "97e7bbc1-ef07-412a-b0a5-1757c95fb796",
+              "uuid": "334538ef-e911-4e8b-a289-65f562bf82ff",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List of Findings",
-              "sourceStep": "/api/3/workflow_steps/e2c28d8c-941a-4fae-b90f-0ee2d287871e",
-              "targetStep": "/api/3/workflow_steps/2f2a2516-31f9-495c-8eef-0a7ca5a6caf1"
+              "sourceStep": "/api/3/workflow_steps/d981c3b8-9ac3-4af6-8726-f84d1d2578fc",
+              "targetStep": "/api/3/workflow_steps/16f23bd2-e82e-432a-abb9-3a39845dbcfe"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "3c83d934-50e2-47b5-a8b8-cc7de59db114",
-          "collection": "/api/3/workflow_collections/5d302eec-a307-428d-be57-d0097c6b9c1a",
+          "uuid": "23ce75d9-6460-4c9a-a5a3-b8bf89372848",
+          "collection": "/api/3/workflow_collections/d3c514d1-b86b-45db-ac48-0b60cb26a57e",
           "triggerLimit": null,
           "description": "Retrieves information about the specified finding generated by the specified analyzer based on the analyzer ARN and finding ID you have specified.",
           "name": "Get Finding Details",
@@ -441,16 +441,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/44fb8279-07a2-4415-8d8f-fa9945a0d874",
+          "triggerStep": "/api/3/workflow_steps/dfa65620-9ec3-40fe-88b1-0cee9cae5c7d",
           "steps": [
             {
-              "uuid": "44fb8279-07a2-4415-8d8f-fa9945a0d874",
+              "uuid": "dfa65620-9ec3-40fe-88b1-0cee9cae5c7d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "640b8910-73cb-4eee-af84-71c52763abdd",
+                "route": "22e7f512-abb0-4412-a734-422fd15c9c70",
                 "title": "AWS Access Analyzer: Get Finding Details",
                 "resources": [
                   "alerts"
@@ -470,7 +470,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "43d5343d-6eef-46c4-a096-ce347b9a0abc",
+              "uuid": "216efb0b-c045-40c9-9dfe-d03b9ff74139",
               "@type": "WorkflowStep",
               "name": "Get Finding Details",
               "description": null,
@@ -498,19 +498,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "57cfb699-7bf9-4174-ab80-5a6a8d46ce13",
+              "uuid": "d8460b07-bf0b-4fca-b47b-9fb470cdb77e",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Finding Details",
-              "sourceStep": "/api/3/workflow_steps/44fb8279-07a2-4415-8d8f-fa9945a0d874",
-              "targetStep": "/api/3/workflow_steps/43d5343d-6eef-46c4-a096-ce347b9a0abc"
+              "sourceStep": "/api/3/workflow_steps/dfa65620-9ec3-40fe-88b1-0cee9cae5c7d",
+              "targetStep": "/api/3/workflow_steps/216efb0b-c045-40c9-9dfe-d03b9ff74139"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "e2c7789b-a4c8-4a60-bb38-ff67221eb54b",
-          "collection": "/api/3/workflow_collections/5d302eec-a307-428d-be57-d0097c6b9c1a",
+          "uuid": "4acbb120-692d-4a20-b902-8cb29136bdc1",
+          "collection": "/api/3/workflow_collections/d3c514d1-b86b-45db-ac48-0b60cb26a57e",
           "triggerLimit": null,
           "description": "Immediately starts a scan of the policies applied to the specified resource based on the analyzer ARN and resource ARN you have specified. ",
           "name": "Start Resource Scan",
@@ -523,16 +523,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/c47c890d-df35-43f4-8319-f1222955ecea",
+          "triggerStep": "/api/3/workflow_steps/09f0e2d2-7f1e-419b-8d35-88b414ef858d",
           "steps": [
             {
-              "uuid": "c47c890d-df35-43f4-8319-f1222955ecea",
+              "uuid": "09f0e2d2-7f1e-419b-8d35-88b414ef858d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "944dd2b4-c5aa-4165-be32-58f146fad8f8",
+                "route": "e03dabad-6413-4872-a231-a87cfa3aa51a",
                 "title": "AWS Access Analyzer: Start Resource Scan",
                 "resources": [
                   "alerts"
@@ -552,7 +552,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "f94a7cda-cdf0-4bc7-9c63-ec2c316c1856",
+              "uuid": "8fdef468-544d-4498-bdcd-a2dc24f5cf3b",
               "@type": "WorkflowStep",
               "name": "Start Resource Scan",
               "description": null,
@@ -579,19 +579,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "aeb5ef39-6449-4f37-bad2-92a8832f86e8",
+              "uuid": "7e368695-d041-41fb-a32b-d0c86e52936c",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Start Resource Scan",
-              "sourceStep": "/api/3/workflow_steps/c47c890d-df35-43f4-8319-f1222955ecea",
-              "targetStep": "/api/3/workflow_steps/f94a7cda-cdf0-4bc7-9c63-ec2c316c1856"
+              "sourceStep": "/api/3/workflow_steps/09f0e2d2-7f1e-419b-8d35-88b414ef858d",
+              "targetStep": "/api/3/workflow_steps/8fdef468-544d-4498-bdcd-a2dc24f5cf3b"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "2e270bb8-b445-411d-adce-a167a7ff9ac6",
-          "collection": "/api/3/workflow_collections/5d302eec-a307-428d-be57-d0097c6b9c1a",
+          "uuid": "3409f7eb-aa4d-418f-aab4-25e9f9a01871",
+          "collection": "/api/3/workflow_collections/d3c514d1-b86b-45db-ac48-0b60cb26a57e",
           "triggerLimit": null,
           "description": "Updates the status of the specified findings of a specified analyzer based on the analyzer ARN, resource ARN, findings IDs, and other input parameters you have specified. ",
           "name": "Update Findings Status",
@@ -604,16 +604,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/3cb1151b-8c56-4235-9f29-2c18a2dd2a53",
+          "triggerStep": "/api/3/workflow_steps/d5bf8a94-c5d9-45ad-87cd-65875eec36ce",
           "steps": [
             {
-              "uuid": "3cb1151b-8c56-4235-9f29-2c18a2dd2a53",
+              "uuid": "d5bf8a94-c5d9-45ad-87cd-65875eec36ce",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "cb3802bd-7794-4be5-829b-853846f44668",
+                "route": "3f299b63-3ab1-41be-89b5-76b5d3752e16",
                 "title": "AWS Access Analyzer: Update Findings Status",
                 "resources": [
                   "alerts"
@@ -633,7 +633,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "f9e8baff-3264-4c94-80aa-06d29eb46c10",
+              "uuid": "5053b967-4f48-4d38-a31a-ec4713a972b7",
               "@type": "WorkflowStep",
               "name": "Update Findings Status",
               "description": null,
@@ -663,12 +663,95 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "4c72dab9-926b-488c-af87-dd3657a15bd4",
+              "uuid": "826e2061-8d8a-449a-b40f-d9241b7e24fc",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Update Findings Status",
-              "sourceStep": "/api/3/workflow_steps/3cb1151b-8c56-4235-9f29-2c18a2dd2a53",
-              "targetStep": "/api/3/workflow_steps/f9e8baff-3264-4c94-80aa-06d29eb46c10"
+              "sourceStep": "/api/3/workflow_steps/d5bf8a94-c5d9-45ad-87cd-65875eec36ce",
+              "targetStep": "/api/3/workflow_steps/5053b967-4f48-4d38-a31a-ec4713a972b7"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "db82c034-02fc-42ce-bbe0-6a89afc20e3c",
+          "collection": "/api/3/workflow_collections/d3c514d1-b86b-45db-ac48-0b60cb26a57e",
+          "triggerLimit": null,
+          "description": "Retrieves a list of specified resource types that have been analyzed by the specified analyzer based on the analyzer ARN, resource type, and other input parameters you have specified. ",
+          "name": "Get Resources",
+          "tag": "#AWS Access Analyzer",
+          "recordTags": [
+            "aws-access-analyzer"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/578c6cd2-d9bd-49f3-93da-8329b644dc55",
+          "steps": [
+            {
+              "uuid": "578c6cd2-d9bd-49f3-93da-8329b644dc55",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "05b719dc-b949-46b6-937a-91cba2a59c87",
+                "title": "AWS Access Analyzer: Get Resources",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "7e12d975-6657-4552-a331-9e542cd8328c",
+              "@type": "WorkflowStep",
+              "name": "Get Resources",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "AWS Access Analyzer",
+                "config": "''",
+                "params": {
+                  "assume_role": false,
+                  "size": 10,
+                  "next_token": ""
+                },
+                "version": "1.1.0",
+                "connector": "aws-access-analyzer",
+                "operation": "get_resources",
+                "operationTitle": "Get Resources",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ae51e006-8314-472a-b6e8-36f178eee4ad",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Resources",
+              "sourceStep": "/api/3/workflow_steps/578c6cd2-d9bd-49f3-93da-8329b644dc55",
+              "targetStep": "/api/3/workflow_steps/7e12d975-6657-4552-a331-9e542cd8328c"
             }
           ]
         }
