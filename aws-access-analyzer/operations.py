@@ -159,6 +159,11 @@ def list_findings(config, params):
     size = params.get("size", 10)
     filter_q = params.get("filter", {})
     sort = params.get("sort", {})
+    if filter_q in ["{}", "[]", ""]:
+        filter_q = {}
+
+    if sort in ["{}", "[]", ""]:
+        sort = {}
 
     next_token = params.get("next_token")  # optional and not required in first time
     if next_token and len(next_token) > 0 and sort:
@@ -218,16 +223,24 @@ def update_findings(config, params):
     client = _get_aws_client(config, params, 'accessanalyzer')
     analyzer_arn = params.get("analyzer_arn")
     resource_arn = params.get("resource_arn")
-    client_token = params.get("client_token")
     ids = params.get("ids", [])  # json list
     status = params.get("status", "ACTIVE")  # 'ACTIVE' | 'ARCHIVED'
-    response = client.update_findings(
-        analyzerArn=analyzer_arn,
-        clientToken=client_token,
-        ids=ids,
-        resourceArn=resource_arn,
-        status=status
-    )
+    client_token = params.get("client_token")
+    config_type = params.pop("config_type")
+    if config_type == "Resource ARN":
+        response = client.update_findings(
+            analyzerArn=analyzer_arn,
+            clientToken=client_token,
+            resourceArn=resource_arn,
+            status=status
+        )
+    else:
+        response = client.update_findings(
+            analyzerArn=analyzer_arn,
+            clientToken=client_token,
+            ids=ids,
+            status=status
+        )
     return response
 
 

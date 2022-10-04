@@ -173,7 +173,6 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "value": "",
           "tooltip": "Specifies the next page token. Not required for the first page. And you can find 'nextToken' value in first page data.",
           "description": "(Optional) The next page token is used for paginating through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. You can use this parameter to retrieve the next page records using the 'nextToken' value and it is not required for the first page."
         }
@@ -387,7 +386,6 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "value": "",
           "tooltip": "Specifies the next page token. Not required for the first page. And you can find 'nextToken' value in first page data.",
           "description": "(Optional) The next page token is used for paginating through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. You can use this parameter to retrieve the next page records using the 'nextToken' value and it is not required for the first page."
         }
@@ -585,8 +583,6 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "value": {},
-          "placeholder": {},
           "tooltip": "Specifies the filter query.",
           "description": "(Optional) Specify a query using which you want to filter the finding list retrieved using AWS Access Analyzer. "
         },
@@ -597,8 +593,6 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "value": {},
-          "placeholder": {},
           "tooltip": "Specifies the sort attributes",
           "description": "(Optional) Specify the attributes using which you want to sort the finding list retrieved using AWS Access Analyzer. "
         },
@@ -609,7 +603,6 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "value": "",
           "tooltip": "Specifies the next page token. Not required for the first page. And you can find 'nextToken' value in first page data.",
           "description": "(Optional) The next page token is used for paginating through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. You can use this parameter to retrieve the next page records using the 'nextToken' value and it is not required for the first page.  "
         }
@@ -723,7 +716,6 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "value": "",
           "tooltip": "Specifies the id of findings",
           "description": "Specify the ID of findings whose details you want to retrieve using AWS Access Analyzer. "
         }
@@ -906,26 +898,43 @@
           "description": "Specify the ARN of the analyzer whose findings' status you want to update using AWS Access Analyzer."
         },
         {
-          "title": "Resource ARN",
-          "type": "text",
-          "name": "resource_arn",
+          "title": "Update By",
+          "type": "select",
+          "name": "update_by",
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "Specify the arn of resources.",
-          "description": "Specify the ARN of resources whose findings' status you want to update using the specified analyzer."
-        },
-        {
-          "title": "ID List",
-          "type": "json",
-          "name": "ids",
-          "required": true,
-          "editable": true,
-          "visible": true,
-          "value": [],
-          "placeholder": ["id1", "id2"],
-          "tooltip": "Comma separated list of ID's.",
-          "description": "Specify a comma-separated list of findings' IDs whose status you want to update using AWS Access Analyzer. "
+          "description": "Select options from which you want to update the findings.",
+          "value": "Resource ARN",
+          "options": ["Resource ARN", "Findings IDs"],
+          "onchange": {
+            "Resource ARN": [
+              {
+                "title": "Resource ARN",
+                "type": "text",
+                "name": "resource_arn",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "tooltip": "Specify the arn of resources.",
+                "description": "Specify the ARN of resources whose findings' status you want to update using the specified analyzer."
+              }
+            ],
+            "Findings IDs": [
+              {
+                "title": "ID List",
+                "type": "json",
+                "name": "ids",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "value": [],
+                "placeholder": ["id1", "id2"],
+                "tooltip": "Comma separated list of ID's.",
+                "description": "Specify a comma-separated list of findings' IDs whose status you want to update using AWS Access Analyzer. "
+              }
+            ]
+          }
         },
         {
           "title": "Status",
@@ -949,7 +958,6 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "value": "",
           "tooltip": "Specifies the client token",
           "description": "Specify the client token to update the status of the specified findings. "
         }
