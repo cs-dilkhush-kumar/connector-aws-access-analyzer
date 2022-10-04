@@ -226,8 +226,8 @@ def update_findings(config, params):
     ids = params.get("ids", [])  # json list
     status = params.get("status", "ACTIVE")  # 'ACTIVE' | 'ARCHIVED'
     client_token = params.get("client_token")
-    config_type = params.pop("config_type")
-    if config_type == "Resource ARN":
+    update_by = params.pop("update_by")
+    if update_by == "Resource ARN":
         response = client.update_findings(
             analyzerArn=analyzer_arn,
             clientToken=client_token,
